@@ -1,0 +1,198 @@
+
+.hourly-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px;
+  color: #17345c;
+}
+
+.hourly-header {
+  margin-bottom: 28px;
+}
+
+.hourly-eyebrow {
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.hourly-header h1 {
+  margin: 10px 0;
+  font-size: 32px;
+  color: #17345c;
+}
+
+.hourly-header p {
+  color: #64748b;
+}
+
+.hourly-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.hourly-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px #0f172a0a;
+}
+
+.hourly-summary span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.hourly-summary strong {
+  color: #2563eb;
+  font-size: 24px;
+}
+
+.hourly-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.hourly-card {
+  padding: 20px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px #0f172a0a;
+}
+
+.hourly-time {
+  font-weight: 700;
+  color: #334155;
+}
+
+.hourly-icon {
+  display: block;
+  margin: 14px 0;
+  font-size: 38px;
+}
+
+.hourly-card h2 {
+  margin: 8px 0;
+  color: #1d4ed8;
+  font-size: 30px;
+}
+
+.hourly-condition {
+  color: #64748b;
+}
+
+.hourly-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #e2e8f0;
+  text-align: left;
+  font-size: 13px;
+}
+
+.hourly-message,
+.hourly-error {
+  padding: 20px;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.hourly-error {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+@media (max-width: 1000px) {
+  .hourly-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .hourly-page {
+    padding: 18px;
+  }
+
+  .hourly-summary,
+  .hourly-list {
+    grid-template-columns: 1fr;
+  }
+
+  .hourly-header h1 {
+    font-size: 26px;
+  }
+}
+.hourly-graph {
+  width: 100%;
+  margin: 24px 0;
+  padding: 26px;
+  background: #ffffff;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.06);
+}
+
+.graph-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.graph-heading h2 {
+  margin: 0;
+  color: #17345c;
+  font-size: 22px;
+}
+
+.graph-heading span {
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.temperature-chart {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.temperature-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 650px;
+}
+
+.graph-caption {
+  margin: 12px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .hourly-graph {
+    padding: 16px;
+  }
+
+  .graph-heading h2 {
+    font-size: 19px;
+  }
+}
+

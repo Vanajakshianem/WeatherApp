@@ -1,0 +1,179 @@
+
+.register-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 18px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0f9ff, #ffffff 48%, #dbeafe);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.register-decoration {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.register-decoration-one {
+  top: -130px;
+  left: -100px;
+  background: rgba(56, 189, 248, 0.17);
+}
+
+.register-decoration-two {
+  bottom: -160px;
+  right: -80px;
+  background: rgba(96, 165, 250, 0.2);
+}
+
+.register-card {
+  position: relative;
+  z-index: 1;
+  width: min(420px, 100%);
+  box-sizing: border-box;
+  padding: 34px;
+  color: #172554;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid #dbeafe;
+  border-radius: 25px;
+  box-shadow: 0 22px 65px rgba(30, 64, 175, 0.13);
+}
+
+.register-icon {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 18px;
+  border-radius: 23px;
+  font-size: 43px;
+  background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+}
+
+.register-eyebrow {
+  text-align: center;
+  color: #0284c7;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.register-card h1 {
+  text-align: center;
+  font-size: 29px;
+  margin: 12px 0;
+  color: #172554;
+}
+
+.register-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.register-card .input-group {
+  margin-bottom: 19px;
+}
+
+.register-card .input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.register-card .input-group input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.register-card .input-group input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.13);
+  background: #ffffff;
+}
+
+.register-button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  background: linear-gradient(110deg, #0284c7, #2563eb);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.register-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.22);
+}
+
+.register-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.register-error {
+  color: #dc2626;
+  font-size: 13px;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.register-card .login-text {
+  margin-top: 23px;
+  color: #64748b;
+  text-align: center;
+  font-size: 14px;
+}
+
+.register-card .login-text span {
+  color: #0284c7;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.register-card .login-text span:hover {
+  text-decoration: underline;
+}
+
+.register-footer {
+  margin: 24px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  color: #64748b;
+  font-size: 12px;
+}
+
+@media (max-width: 480px) {
+  .register-card {
+    padding: 25px 20px;
+  }
+
+  .register-card h1 {
+    font-size: 25px;
+  }
+}

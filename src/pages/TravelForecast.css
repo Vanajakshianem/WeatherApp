@@ -1,0 +1,597 @@
+.travel-forecast-page {
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  padding: 30px 3% 60px;
+  background: linear-gradient(180deg, #eff8ff, #ffffff);
+  color: #172554;
+  box-sizing: border-box;
+}
+
+.back-to-planner {
+  margin-bottom: 22px;
+  padding: 10px 15px;
+  color: #0369a1;
+  background: white;
+  border: 1px solid #bae6fd;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.back-to-planner:hover {
+  background: #e0f2fe;
+}
+
+.travel-forecast-hero {
+  padding: 35px 20px;
+  text-align: center;
+  color: white;
+  background:
+    linear-gradient(120deg, rgba(8, 47, 105, 0.91), rgba(2, 132, 199, 0.75)),
+    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1500&q=80")
+    center/cover;
+  border-radius: 22px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.travel-forecast-hero > span {
+  color: #bae6fd;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.travel-forecast-hero h1 {
+  margin: 12px 0;
+  font-size: clamp(30px, 5vw, 44px);
+}
+
+.travel-forecast-hero p {
+  line-height: 1.7;
+}
+
+.trip-date-badge {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 30px;
+}
+
+.travel-forecast-status {
+  padding: 24px;
+  text-align: center;
+  color: #0369a1;
+  font-weight: 700;
+}
+
+.travel-forecast-error {
+  margin: 25px 0;
+  padding: 20px;
+  text-align: center;
+  background: #fff1f2;
+  border: 1px solid #fecdd3;
+  border-radius: 14px;
+  color: #9f1239;
+  overflow-wrap: anywhere;
+}
+
+.travel-forecast-error button {
+  padding: 11px 15px;
+  color: white;
+  background: #0284c7;
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+/* Traveler insight cards */
+.traveler-insights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin: 30px 0;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.traveler-insight-card {
+  min-width: 0;
+  padding: 26px;
+  background: linear-gradient(145deg, #ffffff, #f0fdfa);
+  border: 1px solid #b7eee4;
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(15, 118, 110, 0.10);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
+}
+
+.traveler-insight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(15, 118, 110, 0.16);
+}
+
+.traveler-insight-card > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: #ccfbf1;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.traveler-insight-card h2 {
+  color: #134e4a;
+  font-size: 22px;
+  margin: 6px 0 14px;
+}
+
+.traveler-insight-card p {
+  color: #526575;
+  line-height: 1.6;
+}
+
+/* Highlighted Smart Packing Checklist */
+.traveler-insight-card:has(.packing-checklist) {
+  background: linear-gradient(145deg, #eff6ff, #f5f3ff);
+  border: 2px solid #818cf8;
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+}
+
+.traveler-insight-card:has(.packing-checklist) > span {
+  background: #ddd6fe;
+}
+
+.traveler-insight-card:has(.packing-checklist) h2 {
+  color: #3730a3;
+}
+
+.packing-progress {
+  height: 9px;
+  background: #e0e7ff;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 14px 0 20px;
+}
+
+.packing-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.packing-checklist {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.packing-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #e0e7ff;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #312e81;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.packing-item:hover {
+  background: #ffffff;
+  border-color: #818cf8;
+}
+
+.packing-item input {
+  width: 18px;
+  height: 18px;
+  accent-color: #6366f1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.packing-item input:checked + span {
+  text-decoration: line-through;
+  color: #64748b;
+}
+
+/* Destination forecast cards */
+.destination-forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  margin: 28px 0;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.destination-forecast-card {
+  min-width: 0;
+  width: 100%;
+  padding: 24px;
+  background: white;
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.07);
+  box-sizing: border-box;
+}
+
+.destination-forecast-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #1e40af;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.destination-location {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* Daily forecast cards */
+.destination-forecast-card:has(.destination-day) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-content: start;
+}
+
+.destination-forecast-card .destination-forecast-header,
+.destination-forecast-card .destination-location,
+.destination-forecast-card .forecast-unavailable {
+  grid-column: 1 / -1;
+}
+
+.destination-day {
+  min-width: 0;
+  padding: 18px;
+  background: linear-gradient(135deg, #f0f9ff, #f8fafc);
+  border: 1px solid #e0f2fe;
+  border-radius: 15px;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+.destination-day-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.destination-day-heading strong {
+  color: #334155;
+  font-size: 13px;
+}
+
+.destination-weather-icon {
+  flex-shrink: 0;
+  font-size: 32px;
+}
+
+.destination-day h3 {
+  margin: 12px 0 5px;
+  color: #334155;
+  font-size: 16px;
+}
+
+.destination-temperature {
+  margin: 7px 0;
+  color: #1d4ed8;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.destination-temperature span {
+  color: #64748b;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.destination-weather-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #475569;
+  font-size: 12px;
+}
+
+.destination-advice {
+  margin: 14px 0 0;
+  padding: 12px;
+  color: #075985;
+  background: #e0f2fe;
+  border-radius: 10px;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* Suitability score and progress */
+.travel-suitability {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  color: #1e3a8a;
+  font-size: 13px;
+}
+
+.suitability-progress {
+  width: 100%;
+  height: 8px;
+  background: #dbeafe;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.suitability-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  border-radius: 20px;
+}
+
+.activity-recommendations {
+  margin-top: 18px;
+}
+
+.activity-recommendations h4 {
+  margin: 0 0 10px;
+  color: #1e3a8a;
+  font-size: 16px;
+}
+
+.activity-recommendations ul {
+  margin: 0;
+  padding-left: 22px;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.activity-recommendations li {
+  margin-bottom: 5px;
+}
+
+.forecast-unavailable {
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.forecast-disclaimer {
+  margin: 25px 0 0;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .destination-forecast-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .destination-forecast-card {
+    padding: 18px;
+  }
+
+  .destination-forecast-card:has(.destination-day) {
+    grid-template-columns: 1fr;
+  }
+
+  .traveler-insights {
+    gap: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .travel-forecast-page {
+    padding: 20px 4% 40px;
+  }
+
+  .travel-forecast-hero {
+    padding: 28px 16px;
+  }
+
+  .traveler-insights {
+    grid-template-columns: 1fr;
+  }
+
+  .traveler-insight-card {
+    padding: 20px;
+  }
+
+  .destination-forecast-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .destination-forecast-card {
+    padding: 16px;
+  }
+
+  .destination-forecast-card:has(.destination-day) {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-day {
+    padding: 14px;
+  }
+}
+/* Fix full-width travel forecast layout */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.travel-forecast-page {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 30px 3% 60px;
+  box-sizing: border-box;
+}
+
+/* Destination cards fill the entire available width */
+.destination-forecast-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  max-width: none;
+  margin: 28px 0;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.destination-forecast-card {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  box-sizing: border-box;
+
+  /* Color only on destination cards */
+  background: linear-gradient(135deg, #eef2ff, #e0f2fe);
+  border: 1px solid #c7d2fe;
+  border-radius: 22px;
+  color: #172554;
+}
+
+/* Two daily weather cards inside each destination */
+.destination-forecast-card:has(.destination-day) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.destination-forecast-card .destination-forecast-header,
+.destination-forecast-card .destination-location,
+.destination-forecast-card .forecast-unavailable {
+  grid-column: 1 / -1;
+}
+
+/* Keep daily card text readable */
+.destination-day {
+  background: linear-gradient(145deg, #ffffff, #dbeafe);
+  color: #172554;
+  border: 1px solid #bfdbfe;
+}
+
+.destination-day h3,
+.destination-day strong,
+.destination-day li {
+  color: #334155;
+}
+
+.destination-temperature {
+  color: #1d4ed8;
+}
+
+.destination-advice {
+  background: #dbeafe;
+  color: #075985;
+}
+
+@media (max-width: 600px) {
+  .travel-forecast-page {
+    padding: 20px 4% 40px;
+  }
+
+  .destination-forecast-card:has(.destination-day) {
+    grid-template-columns: 1fr;
+  }
+}
+/* Daily Travel Itinerary */
+.daily-itinerary {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 18px;
+  padding: 22px;
+  background: linear-gradient(135deg, #f0fdfa, #ecfeff);
+  border: 1px solid #99f6e4;
+  border-radius: 18px;
+  color: #134e4a;
+  box-sizing: border-box;
+}
+
+.daily-itinerary h4 {
+  margin: 0 0 12px;
+  color: #0f766e;
+  font-size: 19px;
+}
+
+.daily-itinerary h5 {
+  margin: 0 0 18px;
+  color: #115e59;
+  font-size: 16px;
+}
+
+.itinerary-schedule {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.itinerary-time {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #ccfbf1;
+  border-radius: 13px;
+  box-sizing: border-box;
+}
+
+.itinerary-time > span {
+  flex-shrink: 0;
+  font-size: 24px;
+}
+
+.itinerary-time strong {
+  color: #0f766e;
+}
+
+.itinerary-time p {
+  margin: 7px 0 0;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.itinerary-tip {
+  margin: 16px 0 0;
+  padding: 12px;
+  background: #ccfbf1;
+  border-radius: 10px;
+  color: #115e59;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+  .itinerary-schedule {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-itinerary {
+    padding: 16px;
+  }
+}

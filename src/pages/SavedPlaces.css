@@ -1,0 +1,189 @@
+
+.saved-places-page {
+  min-height: 100vh;
+  padding-bottom: 60px;
+  color: #172554;
+  background: linear-gradient(180deg, #eff8ff, #ffffff);
+}
+
+.saved-places-hero {
+  padding: 48px 20px 70px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(120deg, #075985, #38bdf8);
+}
+
+.saved-places-hero span {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #e0f2fe;
+}
+
+.saved-places-hero h1 {
+  margin: 14px 0;
+  font-size: clamp(30px, 5vw, 44px);
+}
+
+.saved-places-hero p {
+  color: #f0f9ff;
+}
+
+.saved-places-content {
+  width: min(1000px, 92%);
+  margin: -28px auto 0;
+  position: relative;
+}
+
+.saved-place-form {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  background: white;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.08);
+}
+
+.saved-place-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.saved-place-form button,
+.saved-place-weather-button {
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #0284c7;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.saved-places-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.saved-place-card {
+  overflow: hidden;
+  background: white;
+  border: 1px solid #dbeafe;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.07);
+}
+
+.saved-place-card > img,
+.saved-place-placeholder {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+}
+
+.saved-place-placeholder {
+  display: grid;
+  place-items: center;
+  font-size: 55px;
+  background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+}
+
+.saved-place-details {
+  padding: 18px;
+}
+
+.saved-place-details h2 {
+  margin-top: 0;
+  font-size: 19px;
+}
+
+.saved-place-weather-button {
+  width: 100%;
+}
+
+.saved-place-remove {
+  display: block;
+  margin: 12px auto 0;
+  border: none;
+  background: transparent;
+  color: #dc2626;
+  cursor: pointer;
+}
+
+.saved-places-empty {
+  margin-top: 25px;
+  padding: 35px 20px;
+  text-align: center;
+  background: white;
+  border: 1px dashed #93c5fd;
+  border-radius: 18px;
+}
+
+.saved-places-empty span {
+  font-size: 45px;
+}
+
+.saved-places-empty p {
+  color: #64748b;
+}
+
+.popular-places-heading {
+  margin-top: 35px;
+  color: #1e3a8a;
+}
+
+.popular-saved-places {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.popular-saved-place {
+  overflow: hidden;
+  padding: 0;
+  text-align: left;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  background: white;
+  cursor: pointer;
+}
+
+.popular-saved-place img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.popular-saved-place span,
+.popular-saved-place small {
+  display: block;
+  padding: 8px 12px;
+}
+
+.popular-saved-place span {
+  font-weight: 800;
+  color: #172554;
+}
+
+.popular-saved-place small {
+  padding-top: 0;
+  padding-bottom: 13px;
+  color: #0284c7;
+}
+
+@media (max-width: 600px) {
+  .saved-place-form {
+    flex-direction: column;
+  }
+
+  .saved-places-grid,
+  .popular-saved-places {
+    grid-template-columns: 1fr;
+  }
+}

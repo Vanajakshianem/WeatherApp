@@ -1,0 +1,203 @@
+
+.travel-page {
+  min-height: 100vh;
+  padding-bottom: 60px;
+  background: linear-gradient(180deg, #f0f9ff, #ffffff);
+  color: #172554;
+}
+
+.travel-hero {
+  padding: 55px 20px 75px;
+  text-align: center;
+  background:
+    linear-gradient(120deg, rgba(8, 47, 105, 0.82), rgba(14, 165, 233, 0.6)),
+    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=85")
+    center/cover;
+  color: white;
+}
+
+.travel-hero-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.travel-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #e0f2fe;
+}
+
+.travel-hero h1 {
+  font-size: clamp(30px, 5vw, 48px);
+  margin: 16px 0;
+}
+
+.travel-hero p {
+  max-width: 620px;
+  margin: auto;
+  line-height: 1.8;
+  color: #f0f9ff;
+}
+
+.travel-form-card,
+.travel-suggestions {
+  width: min(1000px, 92%);
+  margin: -30px auto 45px;
+  position: relative;
+  padding: 28px;
+  border: 1px solid #dbeafe;
+  border-radius: 22px;
+  background: white;
+  box-shadow: 0 15px 40px rgba(30, 64, 175, 0.09);
+}
+
+.travel-form-card h2,
+.travel-suggestions h2 {
+  margin-top: 0;
+  color: #1e3a8a;
+}
+
+.travel-date-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.travel-form-card label {
+  display: block;
+  margin-bottom: 9px;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.travel-form-card input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  color: #172554;
+  background: #f8fafc;
+}
+
+.destination-input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.destination-input-row input {
+  flex: 1;
+}
+
+.destination-input-row button,
+.create-trip-button {
+  border: none;
+  border-radius: 10px;
+  padding: 13px 18px;
+  color: white;
+  background: linear-gradient(110deg, #0284c7, #2563eb);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.destination-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.destination-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  color: #075985;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+  border-radius: 30px;
+  font-size: 13px;
+}
+
+.destination-chip button {
+  border: none;
+  background: transparent;
+  color: #0369a1;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.create-trip-button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 15px;
+}
+
+.travel-suggestions {
+  margin-top: 0;
+}
+
+.travel-suggestions > p {
+  color: #64748b;
+}
+
+.popular-place-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.popular-place-card {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px solid #dbeafe;
+  border-radius: 16px;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.popular-place-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.12);
+}
+
+.popular-place-card img {
+  width: 100%;
+  height: 155px;
+  object-fit: cover;
+}
+
+.popular-place-card span {
+  padding: 12px 12px 4px;
+  font-weight: 800;
+  color: #172554;
+}
+
+.popular-place-card small {
+  padding: 0 12px 14px;
+  color: #0284c7;
+}
+
+@media (max-width: 650px) {
+  .travel-date-grid,
+  .popular-place-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .travel-form-card,
+  .travel-suggestions {
+    padding: 20px;
+  }
+
+  .destination-input-row {
+    flex-direction: column;
+  }
+}
